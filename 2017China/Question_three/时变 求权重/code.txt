@@ -1,0 +1,22 @@
+install.packages('QRegVCM')
+library('QRegVCM')
+data=read.table('clipboard',header=T)
+sub=data$jzd[1:26]
+y = data$jg[1:26]
+times = data$num[1:26]
+dim = length(y)
+x0 = rep(1,26)
+x1 = data$wcl[1:26]
+x2 = data$jzdfw[1:26]
+x3 = data$wcrw[1:26]
+X = cbind(x0, x1, x2,x3)
+VecX = c(1, max(x1), max(x2), max(x3))
+kn = c(10, 10, 10,10)
+degree = c(3, 3, 3,3)
+taus = 0.5
+lambdas = c(1,1.5,2,1.5)
+d = c(1, 1, 1,1)
+gam = 1/2
+hatbt = QRIndiv(VecX=VecX, tau=taus, times=times,subj=sub,X=X,y=y, d=d, kn=kn, degree=degree, lambda=lambdas, gam=gam)$hat_bt
+save(hatbt,file="3.txt")
+write.table(hatbt,"3.txt")

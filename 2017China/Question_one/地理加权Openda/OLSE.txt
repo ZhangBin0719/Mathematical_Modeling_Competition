@@ -1,0 +1,73 @@
+Regression
+SUMMARY OF OUTPUT: ORDINARY LEAST SQUARES ESTIMATION
+Data set            :  hui  
+Dependent Variable  :       PRICE  Number of Observations:  835
+Mean dependent var  :     69.1108  Number of Variables   :    4
+S.D. dependent var  :     4.51007  Degrees of Freedom    :  831 
+ 
+ 
+
+ 
+R-squared           :    0.111501  F-statistic           :     34.7617
+Adjusted R-squared  :    0.108293  Prob(F-statistic)     : 3.6045e-021
+Sum squared residual:     15090.7  Log likelihood        :    -2393.23
+Sigma-square        :     18.1597  Akaike info criterion :     4794.45
+S.E. of regression  :     4.26142  Schwarz criterion     :     4813.36
+Sigma-square ML     :     18.0727
+S.E of regression ML:      4.2512
+
+ 
+ 
+-----------------------------------------------------------------------
+     Variable    Coefficient     Std.Error    t-Statistic   Probability  
+-----------------------------------------------------------------------
+    CONSTANT      87.82032       5.838274       15.04217    0.0000000
+  POPULATION  -0.002220333    0.001743407       -1.27356    0.2031766
+         GDP  -5.474382e-010   1.196698e-008    -0.04574574    0.9636316
+      INCOME  -0.0003951007   0.0001531681      -2.579524    0.0100642
+-----------------------------------------------------------------------
+
+ 
+
+REGRESSION DIAGNOSTICS  
+MULTICOLLINEARITY CONDITION NUMBER   117.408680
+TEST ON NORMALITY OF ERRORS
+TEST                  DF          VALUE            PROB
+Jarque-Bera            2            610.965        0.0000000
+
+ 
+ 
+DIAGNOSTICS FOR HETEROSKEDASTICITY  
+RANDOM COEFFICIENTS
+TEST                  DF          VALUE            PROB
+Breusch-Pagan test     3           87.63306        0.0000000
+Koenker-Bassett test   3           36.78006        0.0000001
+SPECIFICATION ROBUST TEST
+TEST                  DF          VALUE            PROB
+White                  9            N/A            N/A
+
+ 
+ 
+DIAGNOSTICS FOR SPATIAL DEPENDENCE   
+FOR WEIGHT MATRIX : hui.gwt
+   (row-standardized weights)
+TEST                          MI/DF      VALUE          PROB  
+Moran's I (error)           0.073847    19.0491214      0.0000000
+Lagrange Multiplier (lag)       1       66.2529347      0.0000000
+Robust LM (lag)                 1       10.5752436      0.0011461
+Lagrange Multiplier (error)     1      228.0423620      0.0000000
+Robust LM (error)               1      172.3646709      0.0000000
+Lagrange Multiplier (SARMA)     2      238.6176055      0.0000000
+
+ 
+ 
+  COEFFICIENTS VARIANCE MATRIX   
+   CONSTANT  POPULATION         GDP      INCOME 
+
+  34.085441   -0.005308    0.000000   -0.000884 
+
+  -0.005308    0.000003   -0.000000    0.000000 
+
+   0.000000   -0.000000    0.000000   -0.000000 
+
+  -0.000884    0.000000   -0.000000    0.000000 

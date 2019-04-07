@@ -1,0 +1,44 @@
+clc
+clear
+syms a b;
+c=[a b]';
+[num,txt,raw]=xlsread('C:\Documents and Settings\Administrator\桌面\灰色预测\TXpre data.xls','1-250');
+%%
+G1=zeros(100,226);
+for m=1:250
+    m
+    A=num(:,m+1);
+    B=cumsum(A);  % 原始数据累加
+    n=length(A);
+    for i=1:(n-1)
+       C(i)=(B(i)+B(i+1))/2;  % 生成累加矩阵
+    end
+    % 计算待定参数的值
+    D=A;D(1)=[];
+    E=[-C;ones(1,n-1)];
+    c=inv(E*E')*E*D;
+    c=c';
+    a=c(1);b=c(2);
+    % 预测后续数据
+    F=[];F(1)=A(1);
+    for i=2:(n+50)                           %用于预测的数据个数
+       F(i)=(A(1)-b/a)/exp(a*(i-1))+b/a ;
+    end
+    G=[];G(1)=A(1);
+    for i=2:(n+50)                           %预测出的数据个数
+        i
+       G(i)=F(i)-F(i-1); %得到预测出来的数据
+    end 
+    G=G';
+    G1(1:100,m)=G;
+end
+xlswrite('C:\Documents and Settings\Administrator\桌面\1-250.xls',G1)
+
+
+
+
+t1=1960:2009;
+t2=1960:2059;
+G, a, b % 输出预测值，发展系数和灰色作用量
+
+%plot(t1,A,'o',t2,G)  %原始数据与预测数据的比较

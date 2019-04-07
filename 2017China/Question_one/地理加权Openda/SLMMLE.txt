@@ -1,0 +1,56 @@
+Regression
+SUMMARY OF OUTPUT: SPATIAL LAG MODEL - MAXIMUM LIKELIHOOD ESTIMATION 
+Data set            : hui 
+Spatial Weight      : hui.gwt 
+Dependent Variable  :       PRICE  Number of Observations:  835
+Mean dependent var  :     69.1108  Number of Variables   :    5
+S.D. dependent var  :     4.51007  Degrees of Freedom    :  830
+Lag coeff.   (Rho)  :          -1 
+ 
+ 
+
+ 
+R-squared           :    0.000000  Log likelihood        :     -1.#IND
+Sq. Correlation     : -            Akaike info criterion :     -1.#IND
+Sigma-square        :      21.252  Schwarz criterion     :     -1.#IND
+S.E of regression   :     4.60999
+ 
+ 
+-----------------------------------------------------------------------
+    Variable    Coefficient     Std.Error    z-value      Probability 
+-----------------------------------------------------------------------
+     W_PRICE            -1   2.142196e-017   -4.668106e+016    0.0000000
+    CONSTANT      167.4464       6.360835       26.32459    0.0000000
+         GDP  -5.038408e-009   1.300597e-008      -0.387392    0.6984661
+      INCOME  -0.0007240145   0.0001668629      -4.338979    0.0000143
+  POPULATION   0.001319102    0.001888828      0.6983706    0.4849453
+-----------------------------------------------------------------------
+
+ 
+REGRESSION DIAGNOSTICS
+DIAGNOSTICS FOR HETEROSKEDASTICITY 
+RANDOM COEFFICIENTS
+TEST                                     DF     VALUE         PROB 
+Breusch-Pagan test                       3       42.88668     0.0000000
+
+ 
+ 
+DIAGNOSTICS FOR SPATIAL DEPENDENCE 
+SPATIAL LAG DEPENDENCE FOR WEIGHT MATRIX : hui.gwt 
+TEST                                     DF      VALUE        PROB 
+Likelihood Ratio Test                    1        -1.#IND     0.0000000
+
+ 
+ 
+COEFFICIENTS VARIANCE MATRIX 
+   CONSTANT         GDP      INCOME  POPULATION     W_PRICE 
+
+  40.460218    0.000000   -0.001049   -0.006289   -0.000000 
+
+   0.000000    0.000000   -0.000000   -0.000000   -0.000000 
+
+  -0.001049   -0.000000    0.000000    0.000000    0.000000 
+
+  -0.006289   -0.000000    0.000000    0.000004    0.000000 
+
+  -0.000000   -0.000000    0.000000    0.000000    0.000000 

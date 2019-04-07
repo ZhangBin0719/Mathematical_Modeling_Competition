@@ -1,0 +1,53 @@
+%topsis 算法
+x=[1.9685 23.2558 11.4943;
+    0.500 20.4082 13.8889;
+    1.4006 40.0000 20;
+    1.0152 27.0270 37.0370;
+    9.8039 41.6667 333.3333];
+[m,n]=size(x);
+a=zeros(m,n);
+pingfanghe=zeros(n,1);
+%求列平方和
+for j=1:n
+    for i=1:m
+        pingfanghe(j)=pingfanghe(j)+x(i,j)^2;
+    end
+end
+%归一化
+for i=1:m
+    for j=1:n
+        a(i,j)=x(i,j)/sqrt(pingfanghe(j));
+    end
+end
+ 
+%最优方案、最劣方案
+zuiyou=zeros(1,n);
+zuilie=zeros(1,n);
+for j=1:n
+    zuiyou(j)=max(a(:,j));
+    zuilie(j)=min(a(:,j));
+end
+ 
+%评价对象所有指标值与最优、最劣距离
+ Dzuiyou=zeros(1,m);
+ Dzuilie=zeros(1,m);
+ for i=1:m
+     for j=1:n
+         Dzuiyou(i)=(zuiyou(j)-a(i,j))^2+Dzuiyou(i);
+         Dzuilie(i)=(zuilie(j)-a(i,j))^2+Dzuilie(i);
+     end
+ end
+ for i=1:m
+     Dzuiyou(i)=sqrt(Dzuiyou(i));
+     Dzuilie(i)=sqrt(Dzuilie(i));
+ end
+  
+ %接近程度
+ c=zeros(1,m);
+ for i=1:m
+     c(i)=Dzuilie(i)/(Dzuiyou(i)+Dzuilie(i));
+ end
+  
+ %排序
+  
+ c
